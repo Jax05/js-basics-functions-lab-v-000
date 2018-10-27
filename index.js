@@ -7,3 +7,13 @@ function distanceFromHqInBlocks(streetNumber) {
 function distanceFromHqInFeet(streetNumber) {
   return 264 * distanceFromHqInBlocks(streetNumber);
 }
+
+function distanceTravelledInFeet(startingStreet, endingStreet) {
+  let blocks;
+  if (startingStreet < endingStreet) {
+    blocks = endingStreet - startingStreet;
+  } else {
+    blocks = startingStreet - endingStreet;
+  }
+  return 264 * blocks;
+}

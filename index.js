@@ -8,12 +8,24 @@ function distanceFromHqInFeet(streetNumber) {
   return 264 * distanceFromHqInBlocks(streetNumber);
 }
 
-function distanceTravelledInFeet(startingStreet, endingStreet) {
+function distanceTravelledInFeet(start, destination) {
   let blocks;
-  if (startingStreet < endingStreet) {
-    blocks = endingStreet - startingStreet;
+  if (start < destination) {
+    blocks = destination - start;
   } else {
-    blocks = startingStreet - endingStreet;
+    blocks = start - destination;
   }
   return 264 * blocks;
+}
+
+function calculatesFarePrice(start, destination) {
+  let feet = distanceTravelledInFeet(start, destination);
+  let fare;
+  if (feet > 2500) {
+    fare = "cannot travel that far";
+  } else if (feet > 400 && feet <= 2000) {
+      fare = feet * .2;
+  } else if (feet > 2000) {
+      fare = 25;
+  }
 }

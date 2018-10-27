@@ -30,4 +30,5 @@ function calculatesFarePrice(start, destination) {
   } else {
     fare = 0;
   }
+  return fare;
 }
